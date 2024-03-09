@@ -88,7 +88,7 @@
 // export default Navbar;
 
 import React, { useState } from "react"
-import {Link} from "react-router-dom"
+import {Link,NavLink} from "react-router-dom"
 import {BiRestaurant} from "react-icons/bi"
 import Button from "../Button/Button.jsx";
 import {AiOutlineMenuUnfold} from "react-icons/ai"
@@ -114,8 +114,8 @@ function Header(){
               <h1 className="font-semibold text-xl">FoodieWeb</h1> 
           </div>
           <nav className="hidden md:flex flex-row item-center gap-8 text-lg font-medium hover:text-brightColor transition-all ">
-            <Link 
-            to="home" 
+            <Link
+            to="/" 
             spy={true} 
             smooth={true} 
             duration={500} 
@@ -125,7 +125,7 @@ function Header(){
             <div className="relative group">
               <div className="flex items-center gap-1">
               <Link 
-                to="dishes" 
+                to="/dishes" 
                 spy={true} 
                 smooth={true} 
                 duration={500} 
@@ -178,17 +178,9 @@ function Header(){
                 </li>
               </ul>
             </div>
-            <Link 
-            to="about" 
-            spy={true} 
-            smooth={true} 
-            duration={500} 
-            className="hover:text-orange-700 transition-all cursor-pointer">
-            About
-            </Link>
             
             <Link 
-            to="menu" 
+            to="/menu" 
             spy={true} 
             smooth={true} 
             duration={500} 
@@ -204,9 +196,13 @@ function Header(){
             className="hover:text-orange-700 transition-all cursor-pointer">
             Reviews
             </Link>
-            <Button title = "Signup"/>
-            <Button title = "Login"/>
-
+            <Link to = "/signup">
+            <Button title = "Signup" />
+            </Link>
+            
+            <Link to = "/login">
+            <Button title = "Login" />
+            </Link>
           </nav>
           <div className="md:hidden flex items-center">
             {menu ?
