@@ -34,7 +34,7 @@ const onSubmit = (data)=>{
         <form  onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
           <div className="flex flex-col">
             <label htmlFor="username" className="text-sm font-medium text-gray-700">
-              Full Name
+              Username
             </label>
             <input
               id="name"
@@ -50,48 +50,9 @@ const onSubmit = (data)=>{
               })}
              
             />
-            <p clasName="font-xs text-left text-red-700">{errors.username?.message}</p>
+            <p className="font-xs text-left text-red-700">{errors.username?.message}</p>
           </div>
 
-          <div className="flex flex-col">
-            <label htmlFor="phoneNumber" className="text-sm font-medium text-gray-700">
-              Phone Number
-            </label>
-            <input
-              id="phoneNumber"
-              type="text"
-              required
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:ring-w-1 text-gray-800"
-              {...register("phoneNumber",{
-                required:{
-                  value: true,
-                  message:"Phone Number  is required"
-                }
-              })}
-             
-            />
-            <p clasName="text-red font-xs text-left">{errors.phoneNumber?.message}</p>
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
-              Email Address
-            </label>
-            <input
-              id="email"
-              
-              type="email"
-              required
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:ring-w-1 text-gray-800"
-              {...register("email",{
-                pattern:{
-                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                    message: "Invalid Email"
-                }
-              })}
-             
-            />
-            <p clasName="text-red font-xs text-left">{errors.email?.message}</p>
-          </div>
           <div className="flex flex-col">
             <label htmlFor="password" className="text-sm font-medium text-gray-700">
               Password
@@ -110,8 +71,29 @@ const onSubmit = (data)=>{
               })}
               
             />
-            <p clasName="text-red font-xs text-left">{errors.password?.message}</p>
+            <p className="text-red font-xs text-left">{errors.password?.message}</p>
           </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+              Email Address
+            </label>
+            <input
+              id="email"
+              
+              type="email"
+              required
+              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:ring-w-1 text-gray-800"
+              {...register("email",{
+                pattern:{
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    message: "Invalid Email"
+                }
+              })}
+             
+            />
+            <p className="text-red font-xs text-left">{errors.email?.message}</p>
+          </div>  
           <button
             type="submit"
             className="inline-flex items-center px-4 py-2 bg-indigo-600 font-medium text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

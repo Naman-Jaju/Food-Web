@@ -1,0 +1,26 @@
+.menu-page {
+    text-align: center;
+  }
+  
+  .phone-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .phone-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+  }
+  
+  .phone-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .phone-card button {
+    margin-top: 10px;
+  }
